@@ -147,6 +147,48 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <section style={{
+        border: '1px solid #282828',
+        borderRadius: '12px',
+        padding: '24px',
+        backgroundColor: 'rgba(255, 255, 255, 0.02)'
+      }}>
+        <div style={{ marginBottom: 16 }}>
+          <h2 style={{ fontSize: 24, margin: 0, color: 'white' }}>Get In Touch</h2>
+        </div>
+        <p style={{ color: '#b3b3b3', fontSize: 14, marginBottom: 24, fontFamily: 'monospace' }}>
+          $ cd contact_me
+        </p>
+        
+        <div style={{ 
+          border: '1px solid #282828',
+          borderRadius: '8px',
+          padding: '16px',
+          backgroundColor: 'rgba(255, 255, 255, 0.02)'
+        }}>
+          <p style={{ 
+            color: '#b3b3b3', 
+            fontSize: 14, 
+            lineHeight: 1.6,
+            margin: 0
+          }}>
+            Whether you'd like to talk about projects, opportunities, or just chat, don't hesitate to reach out. I enjoy meeting new people and exploring new ideas.
+          </p>
+          
+          <br />
+          <br />
+          
+          <p style={{ 
+            color: '#b3b3b3', 
+            fontSize: 14, 
+            lineHeight: 1.6,
+            margin: 0
+          }}>
+            omsethi205@gmail.com
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
