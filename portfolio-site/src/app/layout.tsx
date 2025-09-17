@@ -22,6 +22,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "omsethi.dev",
   description: "Om Sethi's Portfolio - CS Student at University at Buffalo with interests in AI and full-stack development",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
