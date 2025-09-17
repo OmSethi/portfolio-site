@@ -24,7 +24,7 @@ export default function Home() {
       </blockquote>
 
       <p style={{ color: '#b3b3b3', marginBottom: 28 }}>
-        Outside of tech, I’m 6’5 — just as good at debugging code as I am at grabbing things off the top shelf. I also love music — check out my current favorite song below!
+        Outside of tech, I’m 6’5 — just as good at debugging code as I am at grabbing things off the top shelf. When im not coding, you can usually find me playing volleyball or watching F1 every weekend.I also love music — check out my current favorite song below!
       </p>
 
       <div style={{ marginBottom: 36 }}>
