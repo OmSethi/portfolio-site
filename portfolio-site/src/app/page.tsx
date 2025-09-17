@@ -52,11 +52,11 @@ export default function Home() {
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <TechCard
             title="Languages"
-            skills={["Python", "Java", "C", "JavaScript", "Swift", "Go", "SQL", "TypeScript"]}
+            skills={["Python", "Java", "C", "JavaScript", "Swift", "Go","TypeScript"]}
           />
           <TechCard
             title="Technologies"
-            skills={["FastAPI", "Docker", "Ollama", "Expo", "YOLO", "Google Workspace", "Microsoft Office"]}
+            skills={["FastAPI", "Docker", "Ollama", "Expo", "YOLO", "OpenAI"]}
           />
           <TechCard
             title="Tools & Platforms"
