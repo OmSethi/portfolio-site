@@ -17,7 +17,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
 
   return (
-    <div style={{ backgroundColor: 'transparent', border: '1px solid #282828', borderRadius: '8px', padding: '24px', width: '100%' }}>
+    <div style={{ marginBottom: 32, backgroundColor: 'transparent', border: '1px solid #282828', borderRadius: '8px', padding: '24px', width: '100%' }}>
       {/* Header */}
       <div className="flex items-start justify-between mb-3">
         <h3 className="text-xl font-bold text-white">{title}</h3>
