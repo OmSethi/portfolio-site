@@ -1,4 +1,3 @@
-import Image from "next/image";
 import TypewriterText from "./components/TypewriterText";
 import FavoriteSong from "./components/FavoriteSong";
 import HeaderClock from "./components/HeaderClock";
@@ -21,7 +20,7 @@ export default function Home() {
         margin: '16px 0 24px 0',
         color: '#b3b3b3'
       }}>
-        I'm a junior studying CS at the University at Buffalo with a interest in AI and full-stack development. Experienced in building machine learning workflows, multi-agent applications, and mobile apps that combine data and usability. Passionate about building tools that have impact.
+        I&apos;m a junior studying CS at the University at Buffalo with a interest in AI and full-stack development. Experienced in building machine learning workflows, multi-agent applications, and mobile apps that combine data and usability. Passionate about building tools that have impact.
       </blockquote>
 
       <p style={{ color: '#b3b3b3', marginBottom: 28 }}>
@@ -173,7 +172,7 @@ export default function Home() {
             lineHeight: 1.6,
             margin: 0
           }}>
-            Whether you'd like to talk about projects, opportunities, or just chat, don't hesitate to reach out. I enjoy meeting new people and exploring new ideas.
+            Whether you&apos;d like to talk about projects, opportunities, or just chat, don&apos;t hesitate to reach out. I enjoy meeting new people and exploring new ideas.
           </p>
           
           <br />
