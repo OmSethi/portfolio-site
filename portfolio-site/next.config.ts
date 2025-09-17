@@ -6,7 +6,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  outputFileTracingRoot: __dirname
+  outputFileTracingRoot: __dirname,
+  distDir: 'out',
+  generateBuildId: async () => {
+    return 'static-build'
+  }
 };
 
 export default nextConfig;
