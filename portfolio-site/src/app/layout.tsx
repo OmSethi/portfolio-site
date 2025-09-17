@@ -23,7 +23,13 @@ export const metadata: Metadata = {
   title: "omsethi.dev",
   description: "Om Sethi's Portfolio - CS Student at University at Buffalo with interests in AI and full-stack development",
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico?v=2', sizes: 'any' },
+      { url: '/favicon.ico?v=2', type: 'image/x-icon' },
+      { url: '/favicon-32x32.png?v=2', sizes: '32x32', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico?v=2',
+    apple: '/favicon.ico?v=2',
   },
 };
 
@@ -34,6 +40,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+        <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
+        <link rel="icon" href="/favicon-32x32.png?v=2" sizes="32x32" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.ico?v=2" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexMono.variable} antialiased`}
       >
