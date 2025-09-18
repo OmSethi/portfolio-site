@@ -39,7 +39,7 @@ export default function HeaderClock() {
       }}>
         {/* LinkedIn */}
         <a 
-          href="https://www.linkedin.com/in/omsethi-swe/" 
+          href="https://www.linkedin.com/in/omsethi-dev/" 
           target="_blank" 
           rel="noopener noreferrer"
           style={{
