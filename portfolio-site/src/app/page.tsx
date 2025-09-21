@@ -125,8 +125,8 @@ export default function Home() {
             description="An accessibility-focused mobile app that uses AI-powered computer vision and audio guidance to help visually impaired users to nagivate indoor environments independently."
             features={[
               "Developing AI-powered computer vision pipeline to detect and describe objects in real time",
-              "Implemented audio guidance system for indoor navigation with natural, accessible voice feedback",
-              "Built mobile interface for quick interaction and seamless user experience"
+              "Implementing audio guidance system for indoor navigation with natural, accessible voice feedback",
+              "Building mobile interface for quick interaction and seamless user experience"
             ]}
             technologies={["Typescript", "React Native", "YOLO", "TensorFlow Lite", "Machine Learning"]}
           />
