@@ -119,16 +119,16 @@ export default function Home() {
         
         <div>
           <ProjectCard
-            title="SeeForMe"
-            status="Completed"
-            category="Accessibility"
-            description="An accessibility-focused mobile app that uses AI-powered computer vision and audio guidance to help visually impaired users to nagivate indoor environments independently."
+            title="AirCommand"
+            status="In Progress"
+            category="Computer Vision"
+            description="A real-time hand gesture control system that enables volume control, play-pause, app switching with 95% gesture recognition accuracy and <200ms response time."
             features={[
-              "Developing AI-powered computer vision pipeline to detect and describe objects in real time",
-              "Implementing audio guidance system for indoor navigation with natural, accessible voice feedback",
-              "Building mobile interface for quick interaction and seamless user experience"
+              "Currently developing a real-time hand gesture control system using Python, MediaPipe, and OpenCV with 95% gesture recognition accuracy and <200ms response time",
+              "Building a modular gesture recognition architecture currently supporting 4+ gesture types (thumbs up/down, fist, palm) using object-oriented design patterns achieving 25-30 FPS real time processing",
+              "Implementing a computer vision pipeline that processes live video streaming with 21-point hand landmark detection, featuring two-phase execution system (200ms activation delay + 600ms cooldown) to prevent false triggers"
             ]}
-            technologies={["Typescript", "React Native", "YOLO", "TensorFlow Lite", "Machine Learning"]}
+            technologies={["Python", "OpenCV", "MediaPipe", "Computer Vision", "Real-time Processing"]}
           />
           
           <ProjectCard
