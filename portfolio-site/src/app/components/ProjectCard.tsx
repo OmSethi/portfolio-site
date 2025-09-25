@@ -21,7 +21,7 @@ export default function ProjectCard({
       {/* Header */}
       <div className="flex items-start justify-between mb-3">
         <h3 className="text-xl font-bold text-white">{title}</h3>
-        {status === "Completed" && (
+        {(status === "Completed" || status === "In Progress") && (
           <span
             style={{
               width: 8,

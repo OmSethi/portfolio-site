@@ -4,6 +4,7 @@ interface ExperienceCardProps {
   technologies: string[];
   dateRange: string;
   achievements: string[];
+  isActive?: boolean;
 }
 
 export default function ExperienceCard({
@@ -12,6 +13,7 @@ export default function ExperienceCard({
   technologies,
   dateRange,
   achievements,
+  isActive = false,
 }: ExperienceCardProps) {
   return (
     <div style={{ 
@@ -22,14 +24,28 @@ export default function ExperienceCard({
       backgroundColor: 'rgba(255, 255, 255, 0.02)'
     }}>
       {/* Job Title */}
-      <h3 style={{ 
-        color: 'white', 
-        fontSize: 20, 
-        fontWeight: 600, 
-        marginBottom: 4 
-      }}>
-        {title}
-      </h3>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
+        <h3 style={{ 
+          color: 'white', 
+          fontSize: 20, 
+          fontWeight: 600, 
+          margin: 0
+        }}>
+          {title}
+        </h3>
+        {isActive && (
+          <span
+            style={{
+              width: 8,
+              height: 8,
+              borderRadius: '9999px',
+              background: '#22c55e',
+              boxShadow: '0 0 0 2px rgba(34,197,94,0.28)',
+              animation: 'pulse-glow 1.8s ease-in-out infinite'
+            }}
+          />
+        )}
+      </div>
       
       {/* Company Name */}
       <p style={{ 

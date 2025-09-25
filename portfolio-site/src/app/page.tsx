@@ -100,6 +100,7 @@ export default function Home() {
           achievements={[
             "A volleyball app that combines stat tracking and social networking allowing players to record game performance, share highlights, and connect with teammates"
           ]}
+          isActive={true}
         />
       </section>
 
