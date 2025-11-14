@@ -8,7 +8,7 @@ export default function Interactive3DBox() {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [particles, setParticles] = useState<Array<{ x: number; y: number; z: number; vx: number; vy: number; vz: number }>>([]);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     // Initialize particles
