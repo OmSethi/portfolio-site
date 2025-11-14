@@ -19,7 +19,7 @@ export default function Home() {
     }}>
       <HeaderClock />
 
-      {/* Hero Section - Split Layout */}
+      {/* hero section */}
       <div style={{ 
         display: 'flex', 
         gap: 'clamp(2rem, 5vw, 3rem)', 
@@ -28,7 +28,7 @@ export default function Home() {
         flexWrap: 'wrap',
         width: '100%'
       }}>
-        {/* Left Side - Text Content */}
+        {/* text content */}
         <div style={{ flex: '1 1 min(100%, 35rem)' }}>
           <h1 style={{ 
             fontSize: 'clamp(2rem, 5vw, 3rem)', 
@@ -64,7 +64,7 @@ export default function Home() {
             gap: 20, 
             marginTop: '1rem'
           }}>
-            {/* LinkedIn */}
+            {/* linkedin */}
             <a 
               href="https://www.linkedin.com/in/omsethi-dev/" 
               target="_blank" 
@@ -87,7 +87,7 @@ export default function Home() {
               </svg>
             </a>
 
-            {/* GitHub */}
+            {/* github */}
             <a 
               href="https://github.com/OmSethi" 
               target="_blank" 
@@ -110,7 +110,7 @@ export default function Home() {
               </svg>
             </a>
 
-            {/* X (Twitter) */}
+            {/* x */}
             <a 
               href="https://x.com/omsethii" 
               target="_blank" 
@@ -135,7 +135,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Side - Photo */}
+        {/* photo */}
         <div style={{ 
           flex: '0 0 auto',
           display: 'flex',

@@ -16,7 +16,7 @@ export default function TechCard({
       flex: 1,
       minWidth: '200px'
     }}>
-      {/* Category Title */}
+      {/* title */}
       <h3 style={{ 
         color: 'white', 
         fontSize: 16, 
@@ -26,7 +26,7 @@ export default function TechCard({
         {title}
       </h3>
       
-      {/* Skills */}
+      {/* skills */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
         {skills.map((skill, index) => (
           <span

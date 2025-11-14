@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  /* Force dark theme for portfolio site */
+  /* dark theme */
   --background: #0a0a0a;
   --foreground: #ededed;
-  /* Dotted grid theming */
+  /* grid dots */
   --grid-size: 24px;
   --grid-dot: rgba(237, 237, 237, 0.07);
 }
@@ -12,12 +12,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-ibm-plex-mono), var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 * {
-  /* Improve scroll performance */
+  /* scroll performance */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000;
@@ -30,7 +29,7 @@ html {
   overflow-x: hidden;
 }
 
-/* Optimize scrolling performance */
+/* smooth scroll */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -42,15 +41,15 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
-  /* Subtle dotted grid using a single radial-gradient for performance */
+  /* grid background */
   background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
   background-size: var(--grid-size) var(--grid-size);
   background-position: calc(var(--grid-size) / 2) calc(var(--grid-size) / 2);
-  /* Smooth scrolling optimizations */
+  /* font smoothing */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  /* GPU acceleration for smooth scrolling */
+  /* gpu acceleration */
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   overflow-x: hidden;
@@ -66,7 +65,7 @@ blockquote {
   color: #b3b3b3;
 }
 
-/* Typewriter cursor animation */
+/* cursor blink */
 @keyframes blink {
   0%, 50% {
     opacity: 1;
@@ -76,13 +75,7 @@ blockquote {
   }
 }
 
-/* Slow, smooth spin for album art */
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Soft pulsing ring for status dots */
+/* pulse glow */
 @keyframes pulse-glow {
   0% {
     box-shadow: 0 0 0 2px rgba(34,197,94,0.28);
@@ -92,26 +85,5 @@ blockquote {
   }
   100% {
     box-shadow: 0 0 0 2px rgba(34,197,94,0.28);
-  }
-}
-
-/* Overlay animations */
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

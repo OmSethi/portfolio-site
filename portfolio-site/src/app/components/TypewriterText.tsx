@@ -12,28 +12,28 @@ export default function TypewriterText({ text, speed = 100, className = '' }: Ty
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Reset when text changes
+  // reset on text change
   useEffect(() => {
     setDisplayText('');
     setCurrentIndex(0);
   }, [text]);
 
-  // Compute grapheme clusters so emojis don't split into '?' first
+  // compute graphemes
   const graphemes = (() => {
     try {
-      // Using Intl.Segmenter when available for correct grapheme segmentation
+      // use segmenter if available
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const Seg = (Intl as any)?.Segmenter;
       if (typeof Seg !== 'undefined') {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const segmenter = new Seg(undefined, { granularity: 'grapheme' }) as any;
-        // segmenter.segment(text) returns an iterable of segments
+        // segment text
         return Array.from(segmenter.segment(text), (s: { segment: string }) => s.segment);
       }
     } catch {
-      // Fallback below
+      // fallback
     }
-    // Fallback: this may still split some complex emojis but covers most cases
+    // fallback split
     return Array.from(text);
   })();
 
