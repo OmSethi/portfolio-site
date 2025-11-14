@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import TypewriterText from "./components/TypewriterText";
 import HeaderClock from "./components/HeaderClock";
 import TechCard from "./components/TechCard";
@@ -156,16 +157,18 @@ export default function Home() {
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <img
+            <Image
               src="/profile-photo.png"
               alt="Om Sethi"
+              width={200}
+              height={200}
               style={{ 
                 objectFit: 'cover',
                 borderRadius: '50%',
                 width: '100%',
-                height: '100%',
-                display: 'block'
+                height: '100%'
               }}
+              unoptimized
             />
           </div>
         </div>
