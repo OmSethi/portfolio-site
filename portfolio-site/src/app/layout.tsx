@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, IBM_Plex_Mono } from "next/font/google";
+import { Geist, Geist_Mono, IBM_Plex_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,6 +16,12 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
   weight: ["200", "400", "500", "700"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
   display: "swap",
 });
 
@@ -40,14 +46,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
-        <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
-        <link rel="icon" href="/favicon-32x32.png?v=2" sizes="32x32" type="image/png" />
-        <link rel="shortcut icon" href="/favicon.ico?v=2" />
-      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${ibmPlexMono.variable} ${inter.variable} antialiased`}
       >
         {children}
       </body>

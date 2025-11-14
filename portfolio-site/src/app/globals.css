@@ -16,15 +16,44 @@
   --font-mono: var(--font-geist-mono);
 }
 
+* {
+  /* Improve scroll performance */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+
+/* Optimize scrolling performance */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), monospace;
-  font-weight: 200;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
   /* Subtle dotted grid using a single radial-gradient for performance */
   background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
   background-size: var(--grid-size) var(--grid-size);
   background-position: calc(var(--grid-size) / 2) calc(var(--grid-size) / 2);
+  /* Smooth scrolling optimizations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* GPU acceleration for smooth scrolling */
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  overflow-x: hidden;
 }
 
 a {
@@ -63,5 +92,26 @@ blockquote {
   }
   100% {
     box-shadow: 0 0 0 2px rgba(34,197,94,0.28);
+  }
+}
+
+/* Overlay animations */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
