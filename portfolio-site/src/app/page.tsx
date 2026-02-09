@@ -492,7 +492,7 @@ export default function Home() {
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <TechCard
             title="Languages"
-            skills={["Python", "Java", "C", "JavaScript", "Swift", "Go","TypeScript"]}
+            skills={["Python", "Java", "C","Swift", "Go","TypeScript"]}
           />
           <TechCard
             title="Technologies"
