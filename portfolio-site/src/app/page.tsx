@@ -56,7 +56,7 @@ export default function Home() {
             marginBottom: '1.5rem',
             fontFamily: 'var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
           }}>
-            When I'm not coding, you can usually find me playing volleyball, watching F1 every weekend, or listening to music.
+            When I&apos;m not coding, you can usually find me playing volleyball, watching F1 every weekend, or listening to music.
           </p>
 
           <div style={{ 
