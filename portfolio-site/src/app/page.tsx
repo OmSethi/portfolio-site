@@ -56,7 +56,7 @@ export default function Home() {
             marginBottom: '1.5rem',
             fontFamily: 'var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
           }}>
-            I like to develop full-stack applications, build AI-powered tools, and solve complex problems with code.
+            When I'm not coding, you can usually find me playing volleyball, watching F1 every weekend, or listening to music.
           </p>
 
           <div style={{ 
@@ -187,6 +187,50 @@ export default function Home() {
         </div>
         
         <DropdownSection
+          title="Software Engineer Intern"
+          summary="University at Buffalo | February 2026 - Present"
+          showGreenDot={true}
+        >
+          <div style={{ marginBottom: 24 }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+              Key Achievements
+            </h3>
+            <ul style={{ color: '#d1d5db', lineHeight: 1.6, paddingLeft: '20px' }}>
+              <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
+                Maintaining and scaling an academic TraceTool used in CSE 115 and 116, enabling students to trace code execution and visualize memory state, supporting 500+ students annually and 5,000+ submissions per semester
+              </li>
+              <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
+                Onboarding into a large existing codebase while contributing to system scalability efforts focused on multi-institution deployment, higher concurrency, and reliable handling of peak submission loads
+              </li>
+              <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
+                Working with course staff to ensure correct and consistent memory modeling and tracing behavior, improving reliability and clarity of the tool as student usage continues to grow
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+              Technologies
+            </h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {["TypeScript", "React", "tRPC", "Next.js"].map((tech, index) => (
+                <span
+                  key={index}
+                  style={{
+                    background: '#333',
+                    color: '#d1d5db',
+                    padding: '4px 12px',
+                    borderRadius: '16px',
+                    fontSize: '14px'
+                  }}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </DropdownSection>
+        
+        <DropdownSection
           title="Software Engineer Intern - AI"
           summary="Xircls | June 2025 - Sept 2025"
         >
@@ -234,7 +278,7 @@ export default function Home() {
         
         <DropdownSection
           title="Co-Founder"
-          summary="Rally | Sept 2025 - Present"
+          summary="Rally | December 2025 - Present"
           showGreenDot={true}
         >
           <div style={{ marginBottom: 24 }}>
