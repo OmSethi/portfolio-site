@@ -46,7 +46,7 @@ export default function Home() {
             marginBottom: '1.5rem',
             fontFamily: 'var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
           }}>
-            Junior studying computer science at University at Buffalo with a focus in full stack and AI development
+            Data Engineer Intern @ IBM, Junior studying computer science at University at Buffalo with a focus in full stack and AI development
           </p>
 
           <p style={{ 
@@ -187,7 +187,7 @@ export default function Home() {
         </div>
         
         <DropdownSection
-          title="Software Engineer Intern"
+          title="Software Developer - Independent Study / Research"
           summary="University at Buffalo | February 2026 - Present"
           showGreenDot={true}
         >
