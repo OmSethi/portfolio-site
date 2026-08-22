@@ -46,7 +46,7 @@ export default function Home() {
             marginBottom: '1.5rem',
             fontFamily: 'var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
           }}>
-            Data Engineer Intern @ IBM, Junior studying computer science at University at Buffalo with a focus in full stack and AI development
+            Previous Data Engineer Intern @ IBM, Director of Events and Programming @ UB Forge, Senior studying computer science at University at Buffalo with a focus in full stack and AI development
           </p>
 
           <p style={{ 
@@ -187,7 +187,94 @@ export default function Home() {
         </div>
         
         <DropdownSection
-          title="Software Developer - Independent Study / Research"
+          title="Data Engineer Intern"
+          summary="IBM | May 2026 - August 2026"
+        >
+          <div style={{ marginBottom: 24 }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+              Key Achievements
+            </h3>
+            <ul style={{ color: '#d1d5db', lineHeight: 1.6, paddingLeft: '20px' }}>
+              <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
+                Re-engineered a proof-of-concept into a React and Node.js MVP using IBM Consulting Advantage to generate synthetic PDFs, emails, and spreadsheets for model training
+              </li>
+              <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
+                Evaluated and benchmarked an AI content-generation platform against reference documents, systematically testing single and multi-reference model configurations to surface accuracy, formatting, and hallucination failure modes
+              </li>
+              <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
+                Debugged and root-caused recurring defects in a document-generation pipeline, including mapping errors, hierarchy loss, and missing sections, then fed findings back into template and mapping configuration to improve output reliability
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+              Technologies
+            </h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {["React", "Node.js", "IBM Consulting Advantage", "AI/ML", "Python"].map((tech, index) => (
+                <span
+                  key={index}
+                  style={{
+                    background: '#333',
+                    color: '#d1d5db',
+                    padding: '4px 12px',
+                    borderRadius: '16px',
+                    fontSize: '14px'
+                  }}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </DropdownSection>
+        
+        <DropdownSection
+          title="Founding Engineer"
+          summary="OneAuris | May 2026 - Present"
+          showGreenDot={true}
+        >
+          <div style={{ marginBottom: 24 }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+              Key Achievements
+            </h3>
+            <ul style={{ color: '#d1d5db', lineHeight: 1.6, paddingLeft: '20px' }}>
+              <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
+                Architected an LLM document pipeline on AWS Bedrock using a three-tier model dispatcher that routes 95% of calls to Haiku, escalates to Sonnet on low confidence, and applies Claude vision OCR with per-citation source verification
+              </li>
+              <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
+                Built a HIPAA and SOC 2-oriented Next.js and React monorepo on AWS ECS Fargate with blue/green CI/CD, Aurora Postgres Serverless v2 row-level security, and in-house argon2id authentication
+              </li>
+              <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
+                Shipped to production at a paying law firm, powering AI splitting of 1,000+ page discovery PDFs, automated medical index generation, and citation-backed Statement of Facts drafting for attorney review
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+              Technologies
+            </h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {["Next.js", "React", "TypeScript", "AWS Bedrock", "AWS ECS Fargate", "Aurora Postgres", "Claude"].map((tech, index) => (
+                <span
+                  key={index}
+                  style={{
+                    background: '#333',
+                    color: '#d1d5db',
+                    padding: '4px 12px',
+                    borderRadius: '16px',
+                    fontSize: '14px'
+                  }}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </DropdownSection>
+        
+        <DropdownSection
+          title="Software Engineer Intern"
           summary="University at Buffalo | February 2026 - Present"
           showGreenDot={true}
         >
@@ -275,44 +362,6 @@ export default function Home() {
             </div>
           </div>
         </DropdownSection>
-        
-        <DropdownSection
-          title="Co-Founder"
-          summary="Rally | December 2025 - Present"
-          showGreenDot={true}
-        >
-          <div style={{ marginBottom: 24 }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
-              Key Achievements
-            </h3>
-            <ul style={{ color: '#d1d5db', lineHeight: 1.6, paddingLeft: '20px' }}>
-              <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
-                A volleyball app that combines stat tracking and social networking allowing players to record game performance, share highlights, and connect with teammates
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
-              Technologies
-            </h3>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {["Go", "Swift", "postgreSQL", "AWS"].map((tech, index) => (
-                <span
-                  key={index}
-                  style={{
-                    background: '#333',
-                    color: '#d1d5db',
-                    padding: '4px 12px',
-                    borderRadius: '16px',
-                    fontSize: '14px'
-                  }}
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </DropdownSection>
       </section>
 
       <section style={{
@@ -329,7 +378,6 @@ export default function Home() {
         <DropdownSection
           title="AirCommand"
           summary="In Progress • Computer Vision"
-          showGreenDot={true}
         >
           <p style={{ color: '#d1d5db', marginBottom: 24, lineHeight: 1.6 }}>
             A real-time hand gesture control system that enables volume control, play-pause, app switching with 95% gesture recognition accuracy and under 200ms response time.
@@ -356,58 +404,6 @@ export default function Home() {
             </h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {["Python", "OpenCV", "MediaPipe", "Computer Vision", "Real-time Processing"].map((tech, index) => (
-                <span
-                  key={index}
-                  style={{
-                    background: '#333',
-                    color: '#d1d5db',
-                    padding: '4px 12px',
-                    borderRadius: '16px',
-                    fontSize: '14px'
-                  }}
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </DropdownSection>
-        
-        <DropdownSection
-          title="Eden"
-          summary="Completed • AI Security Monitoring"
-        >
-          <p style={{ color: '#d1d5db', marginBottom: 24, lineHeight: 1.6 }}>
-            An AI-powered security monitoring system that processes 25+ live camera feeds in real-time, detecting incidents (fighting, theft, vandalism) with 92% accuracy and automatically alerting security personnel.
-          </p>
-          <div style={{ marginBottom: 24 }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
-              Features
-            </h3>
-            <ul style={{ color: '#d1d5db', lineHeight: 1.6, paddingLeft: '20px' }}>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
-                Engineered an AI-powered security monitoring system using YOLO across 25+ live camera feeds, detecting incidents (fighting, theft, vandalism) with accuracy improving from 75% → 92%
-              </li>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
-                Built a multi-agent verification system using person tracking and spatial analysis to validate threats
-              </li>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
-                Integrated real-time video analysis with automated alerting, enabling instant security dispatch via Twilio in under 2 seconds
-              </li>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
-                Implemented three specialized AI agents working in real-time: Detection Agent (scans feeds using YOLOv8), Classification Agent (identifies incident types), and Analysis Agent (generates timestamped reports)
-              </li>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
-                Developed interactive 3D campus map with real-time camera status visualization and automated footage archiving with thumbnails and metadata
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
-              Technologies
-            </h3>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {["React", "TypeScript", "Next.js", "YOLO", "PyTorch", "OpenCV", "Twilio", "Real-time Processing"].map((tech, index) => (
                 <span
                   key={index}
                   style={{
@@ -492,15 +488,15 @@ export default function Home() {
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <TechCard
             title="Languages"
-            skills={["Python", "Java", "C","Swift", "Go","TypeScript"]}
-          />
-          <TechCard
-            title="Technologies"
-            skills={["FastAPI", "Docker", "Ollama", "Expo", "YOLO", "OpenAI"]}
+            skills={["Python", "Java", "JavaScript", "TypeScript"]}
           />
           <TechCard
             title="Tools & Platforms"
-            skills={["Visual Studio Code", "IntelliJ", "Git", "Emacs", "Xpra", "Windows", "MacOS", "Linux (Ubuntu)"]}
+            skills={["Git", "AWS (ECS, Bedrock, Aurora, S3)", "Next.js", "React", "Node.js", "PostgreSQL", "Vercel", "Docker", "FastAPI"]}
+          />
+          <TechCard
+            title="Core Skills"
+            skills={["AI/ML Engineering", "Full-Stack Development", "Object-Oriented Programming", "Data Structures & Algorithms"]}
           />
         </div>
       </section>
