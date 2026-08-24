@@ -55,9 +55,9 @@ export default function TypewriterText({ text, speed = 100, className = '' }: Ty
         style={{
           display: 'inline-block',
           width: 0,
-          height: '1em',
+          height: '0.8em',
           borderRight: '1px solid currentColor',
-          marginLeft: 0,
+          marginLeft: '0.25em',
           animation: 'blink 0.8s step-end infinite'
         }}
       />
