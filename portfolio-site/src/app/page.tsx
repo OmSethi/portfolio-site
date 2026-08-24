@@ -37,7 +37,7 @@ export default function Home() {
             marginBottom: '1rem',
             lineHeight: 1.2
           }}>
-            <TypewriterText text="Hello, I'm Om Sethi 👋" speed={140} />
+            <TypewriterText text="Hello, I'm Om Sethi" speed={140} />
           </h1>
 
           <p style={{ 
