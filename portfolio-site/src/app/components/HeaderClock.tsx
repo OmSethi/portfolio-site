@@ -27,7 +27,7 @@ export default function HeaderClock() {
         <div style={{ fontFamily: "var(--font-mono)", fontSize: 18, letterSpacing: 1 }}>
           --:--:--
         </div>
-        <div style={{ color: "#9ca3af", marginTop: 4 }}>
+        <div style={{ color: "var(--text-muted)", marginTop: 4 }}>
           Loading...
         </div>
       </header>
@@ -42,7 +42,7 @@ export default function HeaderClock() {
       <div style={{ fontFamily: "var(--font-mono)", fontSize: 18, letterSpacing: 1 }}>
         {time}
       </div>
-      <div style={{ color: "#9ca3af", marginTop: 4 }}>
+      <div style={{ color: "var(--text-muted)", marginTop: 4 }}>
         {date}
       </div>
     </header>

@@ -5,10 +5,12 @@ import TypewriterText from "./components/TypewriterText";
 import HeaderClock from "./components/HeaderClock";
 import TechCard from "./components/TechCard";
 import DropdownSection from "./components/DropdownSection";
+import KeyboardNavProvider from "./components/KeyboardNav";
 
 export default function Home() {
 
   return (
+    <KeyboardNavProvider>
     <main style={{ 
       padding: '2rem 1.5rem', 
       maxWidth: '56rem', 
@@ -33,28 +35,25 @@ export default function Home() {
           <h1 style={{ 
             fontSize: 'clamp(2rem, 5vw, 3rem)', 
             marginBottom: '1rem',
-            lineHeight: 1.2,
-            fontFamily: 'var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+            lineHeight: 1.2
           }}>
             <TypewriterText text="Hello, I'm Om Sethi 👋" speed={140} />
           </h1>
 
           <p style={{ 
-            color: '#ededed', 
+            color: 'var(--foreground)', 
             fontSize: 'clamp(0.9rem, 2vw, 1.125rem)', 
             lineHeight: 1.6,
-            marginBottom: '1.5rem',
-            fontFamily: 'var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+            marginBottom: '1.5rem'
           }}>
             Previous Data Engineer Intern @ IBM, Director of Events and Programming @ UB Forge, Senior studying computer science at University at Buffalo with a focus in full stack and AI development
           </p>
 
           <p style={{ 
-            color: '#b3b3b3', 
+            color: 'var(--text-soft)', 
             fontSize: 'clamp(0.875rem, 1.5vw, 1rem)',
             lineHeight: 1.6,
-            marginBottom: '1.5rem',
-            fontFamily: 'var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+            marginBottom: '1.5rem'
           }}>
             When I&apos;m not coding, you can usually find me playing volleyball, watching F1 every weekend, or listening to music.
           </p>
@@ -73,7 +72,7 @@ export default function Home() {
                 display: "inline-block",
                 transition: "transform 0.2s ease",
                 cursor: "pointer",
-                color: '#ededed'
+                color: 'var(--foreground)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(1.1)";
@@ -96,7 +95,7 @@ export default function Home() {
                 display: "inline-block",
                 transition: "transform 0.2s ease",
                 cursor: "pointer",
-                color: '#ededed'
+                color: 'var(--foreground)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(1.1)";
@@ -119,7 +118,7 @@ export default function Home() {
                 display: "inline-block",
                 transition: "transform 0.2s ease",
                 cursor: "pointer",
-                color: '#ededed'
+                color: 'var(--foreground)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "scale(1.1)";
@@ -150,9 +149,9 @@ export default function Home() {
             maxWidth: '200px',
             borderRadius: '50%',
             overflow: 'hidden',
-            border: '2px solid rgba(255, 255, 255, 0.2)',
+            border: '2px solid var(--border-strong)',
             position: 'relative',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            backgroundColor: 'var(--chip)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
@@ -174,16 +173,24 @@ export default function Home() {
         </div>
       </div>
 
+      <div style={{
+        color: 'var(--text-muted)',
+        fontSize: 13,
+        marginBottom: '0.75rem'
+      }}>
+        ↑↓ navigate &middot; esc exit
+      </div>
+
       <section style={{ 
         marginBottom: '2rem',
-        border: '1px solid #282828',
+        border: '1px solid var(--border)',
         borderRadius: '12px',
         padding: '1.5rem',
-        backgroundColor: 'rgba(255, 255, 255, 0.02)',
+        backgroundColor: 'var(--panel)',
         width: '100%'
       }}>
         <div style={{ marginBottom: 16 }}>
-          <h2 style={{ fontSize: 24, margin: 0, color: 'white' }}>Work Experience</h2>
+          <h2 style={{ fontSize: 24, margin: 0, color: 'var(--heading)' }}>Work Experience</h2>
         </div>
         
         <DropdownSection
@@ -191,10 +198,10 @@ export default function Home() {
           summary="IBM | May 2026 - August 2026"
         >
           <div style={{ marginBottom: 24 }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Key Achievements
             </h3>
-            <ul style={{ color: '#d1d5db', lineHeight: 1.6, paddingLeft: '20px' }}>
+            <ul style={{ color: 'var(--text-strong)', lineHeight: 1.6, paddingLeft: '20px' }}>
               <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
                 Re-engineered a proof-of-concept into a React and Node.js MVP using IBM Consulting Advantage to generate synthetic PDFs, emails, and spreadsheets for model training
               </li>
@@ -207,7 +214,7 @@ export default function Home() {
             </ul>
           </div>
           <div>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Technologies
             </h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -215,8 +222,8 @@ export default function Home() {
                 <span
                   key={index}
                   style={{
-                    background: '#333',
-                    color: '#d1d5db',
+                    background: 'var(--pill)',
+                    color: 'var(--text-strong)',
                     padding: '4px 12px',
                     borderRadius: '16px',
                     fontSize: '14px'
@@ -235,10 +242,10 @@ export default function Home() {
           showGreenDot={true}
         >
           <div style={{ marginBottom: 24 }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Key Achievements
             </h3>
-            <ul style={{ color: '#d1d5db', lineHeight: 1.6, paddingLeft: '20px' }}>
+            <ul style={{ color: 'var(--text-strong)', lineHeight: 1.6, paddingLeft: '20px' }}>
               <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
                 Architected an LLM document pipeline on AWS Bedrock using a three-tier model dispatcher that routes 95% of calls to Haiku, escalates to Sonnet on low confidence, and applies Claude vision OCR with per-citation source verification
               </li>
@@ -251,7 +258,7 @@ export default function Home() {
             </ul>
           </div>
           <div>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Technologies
             </h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -259,8 +266,8 @@ export default function Home() {
                 <span
                   key={index}
                   style={{
-                    background: '#333',
-                    color: '#d1d5db',
+                    background: 'var(--pill)',
+                    color: 'var(--text-strong)',
                     padding: '4px 12px',
                     borderRadius: '16px',
                     fontSize: '14px'
@@ -279,10 +286,10 @@ export default function Home() {
           showGreenDot={true}
         >
           <div style={{ marginBottom: 24 }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Key Achievements
             </h3>
-            <ul style={{ color: '#d1d5db', lineHeight: 1.6, paddingLeft: '20px' }}>
+            <ul style={{ color: 'var(--text-strong)', lineHeight: 1.6, paddingLeft: '20px' }}>
               <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
                 Maintaining and scaling an academic TraceTool used in CSE 115 and 116, enabling students to trace code execution and visualize memory state, supporting 500+ students annually and 5,000+ submissions per semester
               </li>
@@ -295,7 +302,7 @@ export default function Home() {
             </ul>
           </div>
           <div>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Technologies
             </h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -303,8 +310,8 @@ export default function Home() {
                 <span
                   key={index}
                   style={{
-                    background: '#333',
-                    color: '#d1d5db',
+                    background: 'var(--pill)',
+                    color: 'var(--text-strong)',
                     padding: '4px 12px',
                     borderRadius: '16px',
                     fontSize: '14px'
@@ -322,10 +329,10 @@ export default function Home() {
           summary="Xircls | June 2025 - Sept 2025"
         >
           <div style={{ marginBottom: 24 }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Key Achievements
             </h3>
-            <ul style={{ color: '#d1d5db', lineHeight: 1.6, paddingLeft: '20px' }}>
+            <ul style={{ color: 'var(--text-strong)', lineHeight: 1.6, paddingLeft: '20px' }}>
               <li style={{ marginBottom: 8, listStyleType: 'disc' }}>
                 Built scalable backend systems with FastAPI and Docker for AI-powered applications
               </li>
@@ -341,7 +348,7 @@ export default function Home() {
             </ul>
           </div>
           <div>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Technologies
             </h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -349,8 +356,8 @@ export default function Home() {
                 <span
                   key={index}
                   style={{
-                    background: '#333',
-                    color: '#d1d5db',
+                    background: 'var(--pill)',
+                    color: 'var(--text-strong)',
                     padding: '4px 12px',
                     borderRadius: '16px',
                     fontSize: '14px'
@@ -366,40 +373,40 @@ export default function Home() {
 
       <section style={{
         marginBottom: '2rem',
-        border: '1px solid #282828',
+        border: '1px solid var(--border)',
         borderRadius: '12px',
         padding: '1.5rem',
-        backgroundColor: 'rgba(255, 255, 255, 0.02)'
+        backgroundColor: 'var(--panel)'
       }}>
         <div style={{ marginBottom: 16 }}>
-          <h2 style={{ fontSize: 24, margin: 0, color: 'white' }}>Projects</h2>
+          <h2 style={{ fontSize: 24, margin: 0, color: 'var(--heading)' }}>Projects</h2>
         </div>
         
         <DropdownSection
           title="AirCommand"
           summary="In Progress • Computer Vision"
         >
-          <p style={{ color: '#d1d5db', marginBottom: 24, lineHeight: 1.6 }}>
+          <p style={{ color: 'var(--text-strong)', marginBottom: 24, lineHeight: 1.6 }}>
             A real-time hand gesture control system that enables volume control, play-pause, app switching with 95% gesture recognition accuracy and under 200ms response time.
           </p>
           <div style={{ marginBottom: 24 }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Features
             </h3>
-            <ul style={{ color: '#d1d5db', lineHeight: 1.6, paddingLeft: '20px' }}>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
+            <ul style={{ color: 'var(--text-strong)', lineHeight: 1.6, paddingLeft: '20px' }}>
+              <li style={{ marginBottom: 8, listStyleType: 'disc', color: 'var(--text-muted)' }}>
                 Currently developing a real-time hand gesture control system using Python, MediaPipe, and OpenCV with 95% gesture recognition accuracy and under 200ms response time
               </li>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
+              <li style={{ marginBottom: 8, listStyleType: 'disc', color: 'var(--text-muted)' }}>
                 Building a modular gesture recognition architecture currently supporting 4+ gesture types (thumbs up/down, fist, palm) using object-oriented design patterns achieving 25-30 FPS real time processing
               </li>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
+              <li style={{ marginBottom: 8, listStyleType: 'disc', color: 'var(--text-muted)' }}>
                 Implementing a computer vision pipeline that processes live video streaming with 21-point hand landmark detection, featuring two-phase execution system (200ms activation delay + 600ms cooldown) to prevent false triggers
               </li>
             </ul>
           </div>
           <div>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Technologies
             </h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -407,8 +414,8 @@ export default function Home() {
                 <span
                   key={index}
                   style={{
-                    background: '#333',
-                    color: '#d1d5db',
+                    background: 'var(--pill)',
+                    color: 'var(--text-strong)',
                     padding: '4px 12px',
                     borderRadius: '16px',
                     fontSize: '14px'
@@ -425,33 +432,33 @@ export default function Home() {
           title="Sonata - Discord Music Bot"
           summary="Completed • Music Streaming"
         >
-          <p style={{ color: '#d1d5db', marginBottom: 24, lineHeight: 1.6 }}>
+          <p style={{ color: 'var(--text-strong)', marginBottom: 24, lineHeight: 1.6 }}>
             A Discord music bot that streams high-quality audio, supports playlists and queue management and offers interactive commands for seamless group listening.
           </p>
           <div style={{ marginBottom: 24 }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Features
             </h3>
-            <ul style={{ color: '#d1d5db', lineHeight: 1.6, paddingLeft: '20px' }}>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
+            <ul style={{ color: 'var(--text-strong)', lineHeight: 1.6, paddingLeft: '20px' }}>
+              <li style={{ marginBottom: 8, listStyleType: 'disc', color: 'var(--text-muted)' }}>
                 Built high-quality audio streaming with support for YouTube
               </li>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
+              <li style={{ marginBottom: 8, listStyleType: 'disc', color: 'var(--text-muted)' }}>
                 Implemented playlist management with load functionality and queue persistence
               </li>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
+              <li style={{ marginBottom: 8, listStyleType: 'disc', color: 'var(--text-muted)' }}>
                 Created interactive commands for play, pause, and skip
               </li>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
+              <li style={{ marginBottom: 8, listStyleType: 'disc', color: 'var(--text-muted)' }}>
                 Developed user-friendly interface with real-time status updates
               </li>
-              <li style={{ marginBottom: 8, listStyleType: 'disc', color: '#9ca3af' }}>
+              <li style={{ marginBottom: 8, listStyleType: 'disc', color: 'var(--text-muted)' }}>
                 Added support for multiple voice channels and server-specific configurations
           </li>
         </ul>
           </div>
           <div>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'white' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: 12, color: 'var(--heading)' }}>
               Technologies
             </h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -459,8 +466,8 @@ export default function Home() {
                 <span
                   key={index}
                   style={{
-                    background: '#333',
-                    color: '#d1d5db',
+                    background: 'var(--pill)',
+                    color: 'var(--text-strong)',
                     padding: '4px 12px',
                     borderRadius: '16px',
                     fontSize: '14px'
@@ -476,13 +483,13 @@ export default function Home() {
 
       <section style={{
         marginBottom: '2rem',
-        border: '1px solid #282828',
+        border: '1px solid var(--border)',
         borderRadius: '12px',
         padding: '1.5rem',
-        backgroundColor: 'rgba(255, 255, 255, 0.02)'
+        backgroundColor: 'var(--panel)'
       }}>
         <div style={{ marginBottom: 16 }}>
-          <h2 style={{ fontSize: 24, margin: 0, color: 'white' }}>Skills</h2>
+          <h2 style={{ fontSize: 24, margin: 0, color: 'var(--heading)' }}>Skills</h2>
         </div>
         
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
@@ -502,24 +509,24 @@ export default function Home() {
       </section>
 
       <section style={{
-        border: '1px solid #282828',
+        border: '1px solid var(--border)',
         borderRadius: '12px',
         padding: '1.5rem',
-        backgroundColor: 'rgba(255, 255, 255, 0.02)',
+        backgroundColor: 'var(--panel)',
         width: '100%'
       }}>
         <div style={{ marginBottom: 16 }}>
-          <h2 style={{ fontSize: 24, margin: 0, color: 'white' }}>Get In Touch</h2>
+          <h2 style={{ fontSize: 24, margin: 0, color: 'var(--heading)' }}>Get In Touch</h2>
         </div>
         
         <div style={{ 
-          border: '1px solid #282828',
+          border: '1px solid var(--border)',
           borderRadius: '8px',
           padding: '16px',
-          backgroundColor: 'rgba(255, 255, 255, 0.02)'
+          backgroundColor: 'var(--panel)'
         }}>
           <p style={{ 
-            color: '#b3b3b3', 
+            color: 'var(--text-soft)', 
             fontSize: 14, 
             lineHeight: 1.6,
             margin: 0
@@ -531,7 +538,7 @@ export default function Home() {
           <br />
           
           <p style={{ 
-            color: '#b3b3b3', 
+            color: 'var(--text-soft)', 
             fontSize: 14, 
             lineHeight: 1.6,
             margin: 0
@@ -541,5 +548,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </KeyboardNavProvider>
   );
 }
