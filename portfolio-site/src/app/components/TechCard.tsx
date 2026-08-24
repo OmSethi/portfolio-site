@@ -9,16 +9,16 @@ export default function TechCard({
 }: TechCardProps) {
   return (
     <div style={{ 
-      border: '1px solid #282828',
+      border: '1px solid var(--border)',
       borderRadius: '8px',
       padding: '16px',
-      backgroundColor: 'rgba(255, 255, 255, 0.02)',
+      backgroundColor: 'var(--panel)',
       flex: 1,
       minWidth: '200px'
     }}>
       {/* title */}
       <h3 style={{ 
-        color: 'white', 
+        color: 'var(--heading)', 
         fontSize: 16, 
         fontWeight: 600, 
         marginBottom: 12 
@@ -32,12 +32,12 @@ export default function TechCard({
           <span
             key={index}
             style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              color: 'white',
+              backgroundColor: 'var(--chip)',
+              color: 'var(--heading)',
               fontSize: 11,
               padding: '3px 6px',
               borderRadius: '4px',
-              border: '1px solid rgba(255, 255, 255, 0.2)'
+              border: '1px solid var(--border-strong)'
             }}
           >
             {skill}
