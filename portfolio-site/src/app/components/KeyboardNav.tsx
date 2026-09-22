@@ -3,13 +3,19 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 interface KeyboardNavValue {
-  selectedId: string | null;
-  setSelectedId: (id: string | null) => void;
+  cursorId: string | null;
+  setCursorId: (id: string | null) => void;
+  isOpen: (id: string) => boolean;
+  toggle: (id: string) => void;
+  closeAll: () => void;
 }
 
 const KeyboardNavContext = createContext<KeyboardNavValue>({
-  selectedId: null,
-  setSelectedId: () => {}
+  cursorId: null,
+  setCursorId: () => {},
+  isOpen: () => false,
+  toggle: () => {},
+  closeAll: () => {}
 });
 
 export function useKeyboardNav() {
@@ -22,16 +28,39 @@ function isTypingTarget(target: EventTarget | null) {
   return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target.isContentEditable;
 }
 
-export default function KeyboardNavProvider({ children }: { children: React.ReactNode }) {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+function prefersReducedMotion() {
+  return typeof window !== 'undefined'
+    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
 
-  const select = useCallback((id: string | null) => {
-    setSelectedId(id);
-    if (!id) return;
-    // let the accordion begin expanding before we center it
+export default function KeyboardNavProvider({ children }: { children: React.ReactNode }) {
+  const [cursorId, setCursorId] = useState<string | null>(null);
+  const [openIds, setOpenIds] = useState<ReadonlySet<string>>(() => new Set());
+
+  const isOpen = useCallback((id: string) => openIds.has(id), [openIds]);
+
+  const toggle = useCallback((id: string) => {
+    setOpenIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }, []);
+
+  const closeAll = useCallback(() => setOpenIds(new Set()), []);
+
+  // move real DOM focus so Enter/Space stays native to the button
+  const focusItem = useCallback((id: string) => {
+    setCursorId(id);
+    const el = document.querySelector<HTMLElement>(`[data-nav-id="${CSS.escape(id)}"]`);
+    if (!el) return;
+    el.focus({ preventScroll: true });
     requestAnimationFrame(() => {
-      const el = document.querySelector<HTMLElement>(`[data-nav-id="${id}"]`);
-      el?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      el.scrollIntoView({
+        block: 'center',
+        behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+      });
     });
   }, []);
 
@@ -41,13 +70,23 @@ export default function KeyboardNavProvider({ children }: { children: React.Reac
       if (isTypingTarget(e.target)) return;
 
       if (e.key === 'Escape') {
-        if (selectedId) {
+        // close the focused item first, then everything, then release the cursor
+        if (cursorId && openIds.has(cursorId)) {
           e.preventDefault();
-          setSelectedId(null);
+          toggle(cursorId);
+        } else if (openIds.size > 0) {
+          e.preventDefault();
+          closeAll();
+        } else if (cursorId) {
+          e.preventDefault();
+          (document.activeElement as HTMLElement | null)?.blur();
+          setCursorId(null);
         }
         return;
       }
 
+      // Enter/Space are deliberately not handled here. The focused <button>
+      // fires them natively, and intercepting would toggle twice.
       if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
 
       const items = Array.from(document.querySelectorAll<HTMLElement>('[data-nav-id]'));
@@ -55,7 +94,7 @@ export default function KeyboardNavProvider({ children }: { children: React.Reac
 
       e.preventDefault();
 
-      const current = items.findIndex((el) => el.dataset.navId === selectedId);
+      const current = items.findIndex((el) => el.dataset.navId === cursorId);
       let next: number;
       if (current === -1) {
         // nothing selected yet: down enters at the top, up enters at the bottom
@@ -67,15 +106,15 @@ export default function KeyboardNavProvider({ children }: { children: React.Reac
       }
 
       const id = items[next].dataset.navId;
-      if (id) select(id);
+      if (id) focusItem(id);
     }
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [selectedId, select]);
+  }, [cursorId, openIds, toggle, closeAll, focusItem]);
 
   return (
-    <KeyboardNavContext.Provider value={{ selectedId, setSelectedId: select }}>
+    <KeyboardNavContext.Provider value={{ cursorId, setCursorId, isOpen, toggle, closeAll }}>
       {children}
     </KeyboardNavContext.Provider>
   );
