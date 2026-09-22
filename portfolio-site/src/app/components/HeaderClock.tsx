@@ -3,11 +3,10 @@
 import { useEffect, useState } from "react";
 
 function formatDate(d: Date) {
-  const weekday = new Intl.DateTimeFormat(undefined, { weekday: "long" }).format(d);
-  const month = new Intl.DateTimeFormat(undefined, { month: "long" }).format(d);
+  const month = new Intl.DateTimeFormat(undefined, { month: "short" }).format(d);
   const day = d.getDate().toString().padStart(2, "0");
   const year = d.getFullYear();
-  return `${weekday}, ${month} ${day}, ${year}`;
+  return `${month} ${day}, ${year}`;
 }
 
 export default function HeaderClock() {
@@ -21,30 +20,14 @@ export default function HeaderClock() {
     return () => clearInterval(id);
   }, []);
 
-  if (!mounted || !now) {
-    return (
-      <header style={{ textAlign: "center", marginBottom: "2rem", width: "100%" }}>
-        <div style={{ fontFamily: "var(--font-mono)", fontSize: 18, letterSpacing: 1 }}>
-          --:--:--
-        </div>
-        <div style={{ color: "var(--text-muted)", marginTop: 4 }}>
-          Loading...
-        </div>
-      </header>
-    );
-  }
-
-  const time = now.toLocaleTimeString([], { hour12: false });
-  const date = formatDate(now);
+  // placeholder is the same character width, so hydration causes no layout shift
+  const time = mounted && now ? now.toLocaleTimeString([], { hour12: false }) : "--:--:--";
+  const date = mounted && now ? formatDate(now) : "";
 
   return (
-    <header style={{ textAlign: "center", marginBottom: "2rem", width: "100%" }}>
-      <div style={{ fontFamily: "var(--font-mono)", fontSize: 18, letterSpacing: 1 }}>
-        {time}
-      </div>
-      <div style={{ color: "var(--text-muted)", marginTop: 4 }}>
-        {date}
-      </div>
+    <header className="topbar mono">
+      {date && <span className="topbar-date">{date}</span>}
+      <span className="topbar-time">{time}</span>
     </header>
   );
 }
