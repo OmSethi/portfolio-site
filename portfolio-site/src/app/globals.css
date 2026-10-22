@@ -31,6 +31,12 @@
   --wine-deep: #5a2540;
   --wine-bright: #d98cb0;
 
+  /*
+   * cursor: a --wine dot. var() can't reach inside a data URI, so the hex is
+   * repeated here; keep it in step with --wine.
+   */
+  --cursor-dot: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Ccircle cx='6' cy='6' r='5' fill='%23a8557a'/%3E%3C/svg%3E") 6 6, auto;
+
   /* layout: --measure is structure (rules, rows), --prose caps running copy */
   --measure: 56rem;
   --prose: 46rem;
@@ -54,6 +60,7 @@
 }
 
 html {
+  cursor: var(--cursor-dot);
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   scrollbar-color: var(--wine-deep) transparent;
@@ -79,6 +86,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+/* links and buttons default to the hand, so they need the dot set directly */
+a,
+button {
+  cursor: var(--cursor-dot);
 }
 
 /* ---------- text selection ---------- */
@@ -329,7 +342,7 @@ body {
   font: inherit;
   text-align: left;
   width: 100%;
-  cursor: pointer;
+  cursor: var(--cursor-dot);
   padding: 0.875rem 0;
   display: grid;
   grid-template-columns: 1fr auto;
